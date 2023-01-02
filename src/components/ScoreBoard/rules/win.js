@@ -1,5 +1,5 @@
 import {
-  isPlayerScoredNotLessThanThrice,
+  hasAnyPlayerScoredNotLessThanThrice,
   isScoreDifferenceMoreThanOne
 } from '../../../utils/compareScore';
 import { applicationConstants } from '../../../constants/applicationConstants';
@@ -8,8 +8,7 @@ const { PLAYER_ONE_WIN, PLAYER_TWO_WIN } = applicationConstants;
 
 const isCriteriaMatched = (playerOneScore, playerTwoScore) => {
   return (
-    (isPlayerScoredNotLessThanThrice(playerOneScore) ||
-      isPlayerScoredNotLessThanThrice(playerTwoScore)) &&
+    hasAnyPlayerScoredNotLessThanThrice(playerOneScore, playerTwoScore) &&
     isScoreDifferenceMoreThanOne(playerOneScore, playerTwoScore)
   );
 };
