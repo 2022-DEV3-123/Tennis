@@ -42,16 +42,18 @@ describe('Set Game Score', () => {
     expect(screen.getByTestId(GAME_SCORE).textContent).toEqual(expected);
   };
 
-  const playerOneScores = (times) => {
+  const playerScores = (times, playerName) => {
     for (let count = ZERO; count < times; count++) {
-      fireEvent.click(screen.getByTestId(PLAYER_ONE));
+      fireEvent.click(screen.getByTestId(playerName));
     }
   };
 
+  const playerOneScores = (times) => {
+    playerScores(times, PLAYER_ONE);
+  };
+
   const playerTwoScores = (times) => {
-    for (let count = ZERO; count < times; count++) {
-      fireEvent.click(screen.getByTestId(PLAYER_TWO));
-    }
+    playerScores(times, PLAYER_TWO);
   };
 
   test('Love-All when game starts', () => {
