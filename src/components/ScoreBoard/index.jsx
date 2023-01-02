@@ -1,50 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { applicationConstants, scoreLookUp } from '../../constants/applicationConstants';
+import { applicationConstants } from '../../constants/applicationConstants';
+import { deuce } from './rules/deuce';
+import { sameScoreAndLessThanThree } from './rules/sameScoreAndLessThanThree';
+import { scoreNotMoreThanThree } from './rules/scoreNotMoreThanThree';
 import './index.css';
 
-const { SCORE_TITLE, GAME_SCORE, THRICE, HYPHEN, ALL, DEUCE } = applicationConstants;
+const { SCORE_TITLE, GAME_SCORE } = applicationConstants;
+const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree];
 
 const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
   const [gameScore, setGameScore] = useState();
 
-  const isPlayerOneScoredNotMoreThanThrice = () => {
-    return playerOneScore <= THRICE;
-  };
-
-  const isPlayerTwoScoredNotMoreThanThrice = () => {
-    return playerTwoScore <= THRICE;
-  };
-
-  const hasBothPlayersScoredNotMoreThanThrice = () => {
-    return isPlayerOneScoredNotMoreThanThrice() && isPlayerTwoScoredNotMoreThanThrice();
-  };
-
-  const getLookUpScore = () => {
-    return `${scoreLookUp[playerOneScore]}${HYPHEN}${scoreLookUp[playerTwoScore]}`;
-  };
-
-  const hasBothPlayersScoredEqual = () => {
-    return playerOneScore === playerTwoScore;
-  };
-
-  const isPlayerScoredLessThanThrice = () => {
-    return playerOneScore < THRICE;
-  };
-
-  const isPlayerScoredNotLessThanThrice = () => {
-    return playerOneScore >= THRICE;
-  };
-
   const calculateGameScore = () => {
-    if (hasBothPlayersScoredEqual() && isPlayerScoredLessThanThrice()) {
-      return `${scoreLookUp[playerOneScore]}-${ALL}`;
-    }
-    if (hasBothPlayersScoredEqual() && isPlayerScoredNotLessThanThrice()) {
-      return DEUCE;
-    }
-    if (hasBothPlayersScoredNotMoreThanThrice()) {
-      return getLookUpScore();
+    for (const rule of rules) {
+      if (rule.isCriteriaMatched(playerOneScore, playerTwoScore)) {
+        return rule.getScore(playerOneScore, playerTwoScore);
+      }
     }
   };
 
