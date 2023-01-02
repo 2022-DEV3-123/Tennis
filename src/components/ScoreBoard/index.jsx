@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { applicationConstants } from '../../constants/applicationConstants';
+import { applicationConstants, scoreLookUp } from '../../constants/applicationConstants';
 import './index.css';
 
-const {
-  SCORE_TITLE,
-  GAME_SCORE,
-  LOVE_ALL,
-  LOVE,
-  ONE,
-  FIFTEEN_LOVE,
-  TWICE,
-  THIRTY_LOVE,
-  THRICE,
-  FORTY_LOVE
-} = applicationConstants;
+const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE, THRICE, HYPHEN } = applicationConstants;
 
 const ScoreBoard = ({ playerOneScore }) => {
   const [gameScore, setGameScore] = useState();
 
-  useEffect(() => {
+  const isPlayerOneScoredNotMoreThanThrice = () => {
+    return playerOneScore <= THRICE;
+  };
+
+  const calculateGameScore = () => {
     if (playerOneScore === LOVE) {
-      setGameScore(LOVE_ALL);
-    } else if (playerOneScore === ONE) {
-      setGameScore(FIFTEEN_LOVE);
-    } else if (playerOneScore === TWICE) {
-      setGameScore(THIRTY_LOVE);
-    } else if (playerOneScore === THRICE) {
-      setGameScore(FORTY_LOVE);
+      return LOVE_ALL;
     }
+    if (isPlayerOneScoredNotMoreThanThrice()) {
+      return `${scoreLookUp[playerOneScore]}${HYPHEN}${scoreLookUp[LOVE]}`;
+    }
+  };
+
+  const updateGameScore = () => {
+    setGameScore(calculateGameScore());
+  };
+
+  useEffect(() => {
+    updateGameScore();
   }, [playerOneScore]);
 
   return (

@@ -8,11 +8,15 @@ const applicationConstants = {
   PLAYER_ONE: 'Player One',
   ONE: 1,
   LOVE: 0,
-  FIFTEEN_LOVE: 'Fifteen-Love',
-  TWICE: 2,
-  THIRTY_LOVE: 'Thirty-Love',
   THRICE: 3,
-  FORTY_LOVE: 'Forty-Love'
+  HYPHEN: '-'
 };
 
-export { applicationConstants };
+const scoreLookUp = {
+  0: 'Love',
+  1: 'Fifteen',
+  2: 'Thirty',
+  3: 'Forty'
+};
+
+export { applicationConstants, scoreLookUp };
