@@ -13,7 +13,8 @@ const {
   ONCE,
   LOVE_FIFTEEN,
   TWICE,
-  LOVE_THIRTY
+  LOVE_THIRTY,
+  LOVE_FORTY
 } = applicationConstants;
 
 const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
@@ -35,6 +36,9 @@ const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
     }
     if (playerTwoScore === TWICE && playerOneScore === LOVE) {
       return LOVE_THIRTY;
+    }
+    if (playerTwoScore === THRICE && playerOneScore === LOVE) {
+      return LOVE_FORTY;
     }
   };
 

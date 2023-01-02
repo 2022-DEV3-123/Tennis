@@ -14,7 +14,8 @@ const applicationConstants = {
   LOVE_FIFTEEN: 'Love-Fifteen',
   ONCE: 1,
   TWICE: 2,
-  LOVE_THIRTY: 'Love-Thirty'
+  LOVE_THIRTY: 'Love-Thirty',
+  LOVE_FORTY: 'Love-Forty'
 };
 
 const scoreLookUp = {

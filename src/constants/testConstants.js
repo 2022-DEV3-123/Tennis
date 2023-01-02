@@ -17,7 +17,8 @@ const testConstants = {
   FORTY_LOVE: 'Forty-Love',
   PLAYER_TWO: 'Player Two',
   LOVE_FIFTEEN: 'Love-Fifteen',
-  LOVE_THIRTY: 'Love-Thirty'
+  LOVE_THIRTY: 'Love-Thirty',
+  LOVE_FORTY: 'Love-Forty'
 };
 
 export { testConstants };
