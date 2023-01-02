@@ -12,7 +12,9 @@ const applicationConstants = {
   HYPHEN: '-',
   PLAYER_TWO: 'Player Two',
   LOVE_FIFTEEN: 'Love-Fifteen',
-  ONCE: 1
+  ONCE: 1,
+  TWICE: 2,
+  LOVE_THIRTY: 'Love-Thirty'
 };
 
 const scoreLookUp = {
