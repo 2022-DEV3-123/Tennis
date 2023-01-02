@@ -19,7 +19,8 @@ const {
   LOVE_FIFTEEN,
   LOVE_THIRTY,
   LOVE_FORTY,
-  FIFTEEN_THIRTY
+  FIFTEEN_THIRTY,
+  FIFTEEN_ALL
 } = testConstants;
 
 describe('Tennis Game', () => {
@@ -104,5 +105,12 @@ describe('Set Game Score', () => {
     playerTwoScores(TWICE);
 
     gameScoreShouldBe(FIFTEEN_THIRTY);
+  });
+
+  test('Fifteen-All when both players scores once', () => {
+    playerOneScores(ONCE);
+    playerTwoScores(ONCE);
+
+    gameScoreShouldBe(FIFTEEN_ALL);
   });
 });

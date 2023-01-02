@@ -10,7 +10,9 @@ const applicationConstants = {
   LOVE: 0,
   THRICE: 3,
   HYPHEN: '-',
-  PLAYER_TWO: 'Player Two'
+  PLAYER_TWO: 'Player Two',
+  ONCE: 1,
+  FIFTEEN_ALL: 'Fifteen-All'
 };
 
 const scoreLookUp = {
