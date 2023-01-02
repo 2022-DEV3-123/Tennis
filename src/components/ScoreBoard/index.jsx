@@ -16,6 +16,10 @@ const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
     return playerTwoScore <= THRICE;
   };
 
+  const hasBothPlayersScoredNotMoreThanThrice = () => {
+    return isPlayerOneScoredNotMoreThanThrice() && isPlayerTwoScoredNotMoreThanThrice();
+  };
+
   const getLookUpScore = () => {
     return `${scoreLookUp[playerOneScore]}${HYPHEN}${scoreLookUp[playerTwoScore]}`;
   };
@@ -24,10 +28,7 @@ const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
     if (playerOneScore === LOVE && playerTwoScore === LOVE) {
       return LOVE_ALL;
     }
-    if (isPlayerOneScoredNotMoreThanThrice() && playerTwoScore === LOVE) {
-      return getLookUpScore();
-    }
-    if (isPlayerTwoScoredNotMoreThanThrice() && playerOneScore === LOVE) {
+    if (hasBothPlayersScoredNotMoreThanThrice()) {
       return getLookUpScore();
     }
   };
