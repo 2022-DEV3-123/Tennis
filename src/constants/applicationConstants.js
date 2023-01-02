@@ -13,7 +13,8 @@ const applicationConstants = {
   PLAYER_TWO: 'Player Two',
   ALL: 'All',
   DEUCE: 'Deuce',
-  PLAYER_ONE_WIN: 'Player One Win'
+  PLAYER_ONE_WIN: 'Player One Win',
+  PLAYER_TWO_WIN: 'Player Two Win'
 };
 
 const scoreLookUp = {

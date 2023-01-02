@@ -30,7 +30,7 @@ const hasBothPlayersScoredEqual = (playerOneScore, playerTwoScore) => {
 };
 
 const isScoreDifferenceMoreThanOne = (playerOneScore, playerTwoScore) => {
-  return playerOneScore - playerTwoScore > ONE;
+  return Math.abs(playerOneScore - playerTwoScore) > ONE;
 };
 
 export {
