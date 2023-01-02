@@ -11,7 +11,8 @@ const applicationConstants = {
   THRICE: 3,
   HYPHEN: '-',
   PLAYER_TWO: 'Player Two',
-  ALL: 'All'
+  ALL: 'All',
+  DEUCE: 'Deuce'
 };
 
 const scoreLookUp = {
