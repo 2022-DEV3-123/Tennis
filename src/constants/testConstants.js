@@ -22,7 +22,8 @@ const testConstants = {
   FIFTEEN_THIRTY: 'Fifteen-Thirty',
   FIFTEEN_ALL: 'Fifteen-All',
   THIRTY_ALL: 'Thirty-All',
-  DEUCE: 'Deuce'
+  DEUCE: 'Deuce',
+  PLAYER_ONE_WIN: 'Player One Win'
 };
 
 export { testConstants };

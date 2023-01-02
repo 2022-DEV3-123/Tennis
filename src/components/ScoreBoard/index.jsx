@@ -4,10 +4,11 @@ import { applicationConstants } from '../../constants/applicationConstants';
 import { deuce } from './rules/deuce';
 import { sameScoreAndLessThanThree } from './rules/sameScoreAndLessThanThree';
 import { scoreNotMoreThanThree } from './rules/scoreNotMoreThanThree';
+import { playerWins } from './rules/win';
 import './index.css';
 
 const { SCORE_TITLE, GAME_SCORE } = applicationConstants;
-const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree];
+const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree, playerWins];
 
 const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
   const [gameScore, setGameScore] = useState();

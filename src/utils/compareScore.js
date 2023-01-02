@@ -1,6 +1,6 @@
 import { applicationConstants } from '../constants/applicationConstants';
 
-const { THRICE } = applicationConstants;
+const { THRICE, ONE } = applicationConstants;
 
 const isPlayerOneScoredNotMoreThanThrice = (playerOneScore) => {
   return playerOneScore <= THRICE;
@@ -29,9 +29,14 @@ const hasBothPlayersScoredEqual = (playerOneScore, playerTwoScore) => {
   return playerOneScore === playerTwoScore;
 };
 
+const isScoreDifferenceMoreThanOne = (playerOneScore, playerTwoScore) => {
+  return playerOneScore - playerTwoScore > ONE;
+};
+
 export {
   isPlayerScoredLessThanThrice,
   isPlayerScoredNotLessThanThrice,
   hasBothPlayersScoredNotMoreThanThrice,
-  hasBothPlayersScoredEqual
+  hasBothPlayersScoredEqual,
+  isScoreDifferenceMoreThanOne
 };

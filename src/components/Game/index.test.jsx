@@ -22,7 +22,8 @@ const {
   FIFTEEN_THIRTY,
   FIFTEEN_ALL,
   THIRTY_ALL,
-  DEUCE
+  DEUCE,
+  PLAYER_ONE_WIN
 } = testConstants;
 
 describe('Tennis Game', () => {
@@ -128,5 +129,13 @@ describe('Set Game Score', () => {
     playerTwoScores(THRICE);
 
     gameScoreShouldBe(DEUCE);
+  });
+
+  test('Player One Win When player one score is greater than 3 and two points more than player two', () => {
+    playerOneScores(THRICE);
+    playerTwoScores(TWICE);
+    playerOneScores(ONCE);
+
+    gameScoreShouldBe(PLAYER_ONE_WIN);
   });
 });
