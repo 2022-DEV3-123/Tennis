@@ -8,7 +8,8 @@ const testConstants = {
   PLAYER_ONE: 'Player One',
   LOVE: 0,
   LOVE_ALL: 'Love-All',
-  FIFTEEN_LOVE: 'Fifteen-Love'
+  FIFTEEN_LOVE: 'Fifteen-Love',
+  THIRTY_LOVE: 'Thirty-Love'
 };
 
 export { testConstants };

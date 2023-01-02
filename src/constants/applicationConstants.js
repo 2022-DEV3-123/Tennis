@@ -8,7 +8,9 @@ const applicationConstants = {
   PLAYER_ONE: 'Player One',
   ONE: 1,
   LOVE: 0,
-  FIFTEEN_LOVE: 'Fifteen-Love'
+  FIFTEEN_LOVE: 'Fifteen-Love',
+  TWICE: 2,
+  THIRTY_LOVE: 'Thirty-Love'
 };
 
 export { applicationConstants };
