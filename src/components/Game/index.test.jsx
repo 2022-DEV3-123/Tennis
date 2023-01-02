@@ -19,15 +19,21 @@ describe('Tennis Game', () => {
 });
 
 describe('Set Game Score', () => {
-  test('Love-All when game starts', () => {
+  beforeEach(() => {
     render(<Game />);
-    expect(screen.getByTestId(GAME_SCORE).textContent).toEqual(LOVE_ALL);
+  });
+
+  const gameScoreShouldBe = (expected) => {
+    expect(screen.getByTestId(GAME_SCORE).textContent).toEqual(expected);
+  };
+
+  test('Love-All when game starts', () => {
+    gameScoreShouldBe(LOVE_ALL);
   });
 
   test('Fifteen-Love when player one scores once', () => {
-    render(<Game />);
     fireEvent.click(screen.getByTestId(PLAYER_ONE));
 
-    expect(screen.getByTestId(GAME_SCORE).textContent).toEqual(FIFTEEN_LOVE);
+    gameScoreShouldBe(FIFTEEN_LOVE);
   });
 });
