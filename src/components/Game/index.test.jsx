@@ -5,13 +5,15 @@ import { testConstants } from '../../constants/testConstants';
 const { GAME_TITLE, SCORE_TITLE, GAME_SCORE, LOVE_ALL } = testConstants;
 
 describe('Tennis Game', () => {
-  test('Should contain game title', () => {
+  beforeEach(() => {
     render(<Game />);
+  });
+
+  test('Should contain game title', () => {
     expect(screen.getByTestId(GAME_TITLE).textContent).toEqual(GAME_TITLE);
   });
 
   test('Should contain score title', () => {
-    render(<Game />);
     expect(screen.getByTestId(SCORE_TITLE).textContent).toEqual(SCORE_TITLE);
   });
 });
