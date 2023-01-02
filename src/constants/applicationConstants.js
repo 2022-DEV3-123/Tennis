@@ -11,10 +11,7 @@ const applicationConstants = {
   THRICE: 3,
   HYPHEN: '-',
   PLAYER_TWO: 'Player Two',
-  ONCE: 1,
-  FIFTEEN_ALL: 'Fifteen-All',
-  TWICE: 2,
-  THIRTY_ALL: 'Thirty-All'
+  ALL: 'All'
 };
 
 const scoreLookUp = {
