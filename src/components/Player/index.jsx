@@ -9,7 +9,7 @@ const Player = ({ name, onScored }) => {
   return (
     <div>
       <h4 data-testid={`${PLAYER_TITLE} ${name}`}>{name}</h4>
-      <button data-testid={name} onClick={onScored}>
+      <button data-testid={name} onClick={() => onScored(name)}>
         {SCORED}
       </button>
     </div>

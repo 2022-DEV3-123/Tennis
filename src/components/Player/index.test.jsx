@@ -20,4 +20,10 @@ describe('Player component', () => {
     expect(screen.getByTestId(PLAYER_ONE).textContent).toEqual(SCORED);
     expect(onScored).toHaveBeenCalled();
   });
+
+  test('Should call score event with player name', () => {
+    fireEvent.click(screen.getByTestId(PLAYER_ONE));
+
+    expect(onScored).toHaveBeenCalledWith(PLAYER_ONE);
+  });
 });

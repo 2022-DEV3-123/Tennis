@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { applicationConstants, scoreLookUp } from '../../constants/applicationConstants';
 import './index.css';
 
-const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE, THRICE, HYPHEN } = applicationConstants;
+const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE, THRICE, HYPHEN, ONCE, LOVE_FIFTEEN } =
+  applicationConstants;
 
-const ScoreBoard = ({ playerOneScore }) => {
+const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
   const [gameScore, setGameScore] = useState();
 
   const isPlayerOneScoredNotMoreThanThrice = () => {
@@ -13,11 +14,14 @@ const ScoreBoard = ({ playerOneScore }) => {
   };
 
   const calculateGameScore = () => {
-    if (playerOneScore === LOVE) {
+    if (playerOneScore === LOVE && playerTwoScore === LOVE) {
       return LOVE_ALL;
     }
-    if (isPlayerOneScoredNotMoreThanThrice()) {
-      return `${scoreLookUp[playerOneScore]}${HYPHEN}${scoreLookUp[LOVE]}`;
+    if (isPlayerOneScoredNotMoreThanThrice() && playerTwoScore === LOVE) {
+      return `${scoreLookUp[playerOneScore]}${HYPHEN}${scoreLookUp[playerTwoScore]}`;
+    }
+    if (playerTwoScore === ONCE && playerOneScore === LOVE) {
+      return LOVE_FIFTEEN;
     }
   };
 
@@ -27,7 +31,7 @@ const ScoreBoard = ({ playerOneScore }) => {
 
   useEffect(() => {
     updateGameScore();
-  }, [playerOneScore]);
+  }, [playerOneScore, playerTwoScore]);
 
   return (
     <div>
@@ -42,7 +46,8 @@ const ScoreBoard = ({ playerOneScore }) => {
 };
 
 ScoreBoard.propTypes = {
-  playerOneScore: PropTypes.number.isRequired
+  playerOneScore: PropTypes.number.isRequired,
+  playerTwoScore: PropTypes.number.isRequired
 };
 
 export default ScoreBoard;

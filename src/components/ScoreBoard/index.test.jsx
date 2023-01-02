@@ -6,7 +6,7 @@ const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE } = testConstants;
 
 describe('Score Board', () => {
   beforeEach(() => {
-    render(<ScoreBoard playerOneScore={LOVE} />);
+    render(<ScoreBoard playerOneScore={LOVE} playerTwoScore={LOVE} />);
   });
 
   test('Should contain title', () => {
