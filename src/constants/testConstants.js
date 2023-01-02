@@ -12,7 +12,9 @@ const testConstants = {
   THIRTY_LOVE: 'Thirty-Love',
   ZERO: 0,
   ONCE: 1,
-  TWICE: 2
+  TWICE: 2,
+  THRICE: 3,
+  FORTY_LOVE: 'Forty-Love'
 };
 
 export { testConstants };

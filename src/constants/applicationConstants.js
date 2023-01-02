@@ -10,7 +10,9 @@ const applicationConstants = {
   LOVE: 0,
   FIFTEEN_LOVE: 'Fifteen-Love',
   TWICE: 2,
-  THIRTY_LOVE: 'Thirty-Love'
+  THIRTY_LOVE: 'Thirty-Love',
+  THRICE: 3,
+  FORTY_LOVE: 'Forty-Love'
 };
 
 export { applicationConstants };

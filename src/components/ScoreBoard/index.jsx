@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 import { applicationConstants } from '../../constants/applicationConstants';
 import './index.css';
 
-const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE, ONE, FIFTEEN_LOVE, TWICE, THIRTY_LOVE } =
-  applicationConstants;
+const {
+  SCORE_TITLE,
+  GAME_SCORE,
+  LOVE_ALL,
+  LOVE,
+  ONE,
+  FIFTEEN_LOVE,
+  TWICE,
+  THIRTY_LOVE,
+  THRICE,
+  FORTY_LOVE
+} = applicationConstants;
 
 const ScoreBoard = ({ playerOneScore }) => {
   const [gameScore, setGameScore] = useState();
@@ -16,6 +26,8 @@ const ScoreBoard = ({ playerOneScore }) => {
       setGameScore(FIFTEEN_LOVE);
     } else if (playerOneScore === TWICE) {
       setGameScore(THIRTY_LOVE);
+    } else if (playerOneScore === THRICE) {
+      setGameScore(FORTY_LOVE);
     }
   }, [playerOneScore]);
 
