@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 import { testConstants } from '../../constants/testConstants';
 import ScoreBoard from './';
 
-const { SCORE_TITLE, GAME_SCORE, LOVE_ALL } = testConstants;
+const { SCORE_TITLE, GAME_SCORE, LOVE_ALL, LOVE } = testConstants;
 
 describe('Score Board', () => {
   beforeEach(() => {
-    render(<ScoreBoard />);
+    render(<ScoreBoard playerOneScore={LOVE} />);
   });
 
   test('Should contain title', () => {
