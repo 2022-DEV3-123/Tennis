@@ -5,10 +5,11 @@ import { deuce } from './rules/deuce';
 import { sameScoreAndLessThanThree } from './rules/sameScoreAndLessThanThree';
 import { scoreNotMoreThanThree } from './rules/scoreNotMoreThanThree';
 import { playerWins } from './rules/win';
+import { advantange } from './rules/advantage';
 import './index.css';
 
 const { SCORE_TITLE, GAME_SCORE } = applicationConstants;
-const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree, playerWins];
+const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree, playerWins, advantange];
 
 const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
   const [gameScore, setGameScore] = useState();

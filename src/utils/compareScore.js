@@ -40,11 +40,16 @@ const hasAnyPlayerScoredNotLessThanThrice = (playerOneScore, playerTwoScore) => 
   );
 };
 
+const isScoreDifferenceIsOne = (playerOneScore, playerTwoScore) => {
+  return playerOneScore - playerTwoScore === ONE;
+};
+
 export {
   isPlayerScoredLessThanThrice,
   isPlayerScoredNotLessThanThrice,
   hasBothPlayersScoredNotMoreThanThrice,
   hasBothPlayersScoredEqual,
   isScoreDifferenceMoreThanOne,
-  hasAnyPlayerScoredNotLessThanThrice
+  hasAnyPlayerScoredNotLessThanThrice,
+  isScoreDifferenceIsOne
 };
