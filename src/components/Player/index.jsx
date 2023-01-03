@@ -5,11 +5,16 @@ import './index.css';
 
 const { PLAYER_TITLE, SCORED } = applicationConstants;
 
-const Player = ({ name, onScored }) => {
+const Player = ({ name, onScored, gameOver }) => {
   return (
     <div>
       <h4 data-testid={`${PLAYER_TITLE} ${name}`}>{name}</h4>
-      <button data-testid={name} onClick={() => onScored(name)}>
+      <button
+        className={gameOver ? 'disabled' : ''}
+        disabled={gameOver}
+        data-testid={name}
+        onClick={() => onScored(name)}
+      >
         {SCORED}
       </button>
     </div>
@@ -18,7 +23,8 @@ const Player = ({ name, onScored }) => {
 
 Player.propTypes = {
   name: PropTypes.string.isRequired,
-  onScored: PropTypes.func.isRequired
+  onScored: PropTypes.func.isRequired,
+  gameOver: PropTypes.bool.isRequired
 };
 
 export default Player;

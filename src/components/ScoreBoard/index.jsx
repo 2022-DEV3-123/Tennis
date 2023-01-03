@@ -8,10 +8,10 @@ import { playerWins } from './rules/win';
 import { advantange } from './rules/advantage';
 import './index.css';
 
-const { SCORE_TITLE, GAME_SCORE } = applicationConstants;
+const { SCORE_TITLE, GAME_SCORE, WIN } = applicationConstants;
 const rules = [sameScoreAndLessThanThree, deuce, scoreNotMoreThanThree, playerWins, advantange];
 
-const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
+const ScoreBoard = ({ playerOneScore, playerTwoScore, setGameover }) => {
   const [gameScore, setGameScore] = useState();
 
   const calculateGameScore = () => {
@@ -26,9 +26,19 @@ const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
     setGameScore(calculateGameScore());
   };
 
+  const isGameOver = () => {
+    return gameScore?.includes(WIN);
+  };
+
   useEffect(() => {
     updateGameScore();
   }, [playerOneScore, playerTwoScore]);
+
+  useEffect(() => {
+    if (isGameOver()) {
+      setGameover(true);
+    }
+  }, [gameScore]);
 
   return (
     <div>
@@ -44,7 +54,8 @@ const ScoreBoard = ({ playerOneScore, playerTwoScore }) => {
 
 ScoreBoard.propTypes = {
   playerOneScore: PropTypes.number.isRequired,
-  playerTwoScore: PropTypes.number.isRequired
+  playerTwoScore: PropTypes.number.isRequired,
+  setGameover: PropTypes.func.isRequired
 };
 
 export default ScoreBoard;

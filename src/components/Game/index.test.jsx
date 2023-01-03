@@ -165,4 +165,14 @@ describe('Set Game Score', () => {
 
     gameScoreShouldBe(PLAYER_TWO_ADVANTAGE);
   });
+
+  test('Winner when one of the player wins and game should be over', () => {
+    playerOneScores(ONCE);
+    playerTwoScores(TWICE);
+    playerOneScores(THRICE);
+
+    gameScoreShouldBe(PLAYER_ONE_WIN);
+    expect(screen.getByTestId(PLAYER_ONE)).toBeDisabled();
+    expect(screen.getByTestId(PLAYER_TWO)).toBeDisabled();
+  });
 });
