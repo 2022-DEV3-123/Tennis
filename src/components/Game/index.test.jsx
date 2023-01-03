@@ -26,7 +26,8 @@ const {
   PLAYER_ONE_WIN,
   PLAYER_TWO_WIN,
   PLAYER_ONE_ADVANTAGE,
-  PLAYER_TWO_ADVANTAGE
+  PLAYER_TWO_ADVANTAGE,
+  RESET
 } = testConstants;
 
 describe('Tennis Game', () => {
@@ -174,5 +175,11 @@ describe('Set Game Score', () => {
     gameScoreShouldBe(PLAYER_ONE_WIN);
     expect(screen.getByTestId(PLAYER_ONE)).toBeDisabled();
     expect(screen.getByTestId(PLAYER_TWO)).toBeDisabled();
+  });
+
+  test('Love-All when game resets', () => {
+    fireEvent.click(screen.getByTestId(RESET));
+
+    gameScoreShouldBe(LOVE_ALL);
   });
 });

@@ -17,7 +17,8 @@ const applicationConstants = {
   PLAYER_TWO_WIN: 'Player Two Win',
   PLAYER_ONE_ADVANTAGE: 'Player One Advantage',
   PLAYER_TWO_ADVANTAGE: 'Player Two Advantage',
-  WIN: 'Win'
+  WIN: 'Win',
+  RESET: 'Reset'
 };
 
 const scoreLookUp = {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ScoreBoard from '../ScoreBoard';
 import Player from '../Player';
+import ResetGame from '../ResetGame';
 import { applicationConstants } from '../../constants/applicationConstants';
 import './index.css';
 
@@ -17,6 +18,12 @@ const Game = () => {
       : setPlayerTwoScore(playerTwoScore + ONE);
   };
 
+  const resetGame = () => {
+    setPlayerOneScore(LOVE);
+    setPlayerTwoScore(LOVE);
+    setGameover(false);
+  };
+
   return (
     <div className='Game'>
       <header className='Header'>
@@ -27,6 +34,7 @@ const Game = () => {
         playerTwoScore={playerTwoScore}
         setGameover={setGameover}
       />
+      <ResetGame onReset={resetGame} />
       <div className='container'>
         <Player name={PLAYER_ONE} onScored={incrementScore} gameOver={gameOver} />
         <Player name={PLAYER_TWO} onScored={incrementScore} gameOver={gameOver} />

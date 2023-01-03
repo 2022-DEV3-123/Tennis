@@ -27,7 +27,8 @@ const testConstants = {
   PLAYER_TWO_WIN: 'Player Two Win',
   PLAYER_ONE_ADVANTAGE: 'Player One Advantage',
   PLAYER_TWO_ADVANTAGE: 'Player Two Advantage',
-  FOUR_TIMES: 4
+  FOUR_TIMES: 4,
+  RESET: 'Reset'
 };
 
 export { testConstants };
