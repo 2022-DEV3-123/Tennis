@@ -40,3 +40,40 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Reports
+
+### Test Coverage Report
+
+    PASS  src/components/ResetGame/index.test.jsx
+    PASS  src/components/Player/index.test.jsx
+    PASS  src/components/ScoreBoard/index.test.jsx
+    PASS  src/components/Game/index.test.jsx
+
+|File                           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+|-------------------------------|---------|----------|---------|---------|-------------------|
+|All files                      |     100 |      100 |     100 |     100 |                   |
+|components/Game                |     100 |      100 |     100 |     100 |                   |
+| index.jsx                     |     100 |      100 |     100 |     100 |                   |
+|components/Player              |     100 |      100 |     100 |     100 |                   |
+| index.jsx                     |     100 |      100 |     100 |     100 |                   |
+|components/ResetGame           |     100 |      100 |     100 |     100 |                   |
+| index.jsx                     |     100 |      100 |     100 |     100 |                   |
+|components/ScoreBoard          |     100 |      100 |     100 |     100 |                   |
+| index.jsx                     |     100 |      100 |     100 |     100 |                   |
+|components/ScoreBoard/rules    |     100 |      100 |     100 |     100 |                   |
+| advantage.js                  |     100 |      100 |     100 |     100 |                   |
+| deuce.js                      |     100 |      100 |     100 |     100 |                   |
+| sameScoreAndLessThanThree.js  |     100 |      100 |     100 |     100 |                   |
+| scoreNotMoreThanThree.js      |     100 |      100 |     100 |     100 |                   |
+| win.js                        |     100 |      100 |     100 |     100 |                   |
+|constants                      |     100 |      100 |     100 |     100 |                   |
+| applicationConstants.js       |     100 |      100 |     100 |     100 |                   |
+| testConstants.js              |     100 |      100 |     100 |     100 |                   |
+|utils                          |     100 |      100 |     100 |     100 |                   |
+| compareScore.js               |     100 |      100 |     100 |     100 |                   |
+
+    Test Suites: 4 passed, 4 total
+    Tests:       28 passed, 28 total
+    Snapshots:   0 total
+    Time:        3.294 s
