@@ -41,7 +41,7 @@ const hasAnyPlayerScoredNotLessThanThrice = (playerOneScore, playerTwoScore) => 
 };
 
 const isScoreDifferenceIsOne = (playerOneScore, playerTwoScore) => {
-  return playerOneScore - playerTwoScore === ONE;
+  return Math.abs(playerOneScore - playerTwoScore) === ONE;
 };
 
 export {

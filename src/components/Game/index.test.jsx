@@ -25,7 +25,8 @@ const {
   DEUCE,
   PLAYER_ONE_WIN,
   PLAYER_TWO_WIN,
-  PLAYER_ONE_ADVANTAGE
+  PLAYER_ONE_ADVANTAGE,
+  PLAYER_TWO_ADVANTAGE
 } = testConstants;
 
 describe('Tennis Game', () => {
@@ -155,5 +156,13 @@ describe('Set Game Score', () => {
     playerOneScores(ONCE);
 
     gameScoreShouldBe(PLAYER_ONE_ADVANTAGE);
+  });
+
+  test('Advantage Player Two when the player two score is greater than 3 and one point more than player one', () => {
+    playerTwoScores(THRICE);
+    playerOneScores(THRICE);
+    playerTwoScores(ONCE);
+
+    gameScoreShouldBe(PLAYER_TWO_ADVANTAGE);
   });
 });
