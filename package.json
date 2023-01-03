@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll=true --coveragePathIgnorePatterns=src/index.js",
+    "test": "react-scripts test --coverage --watchAll=false --coveragePathIgnorePatterns=src/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
